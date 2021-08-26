@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ConnectorSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--Connection to UiPath Orchestrator server settings-->
+  <DmsConnectionSettings>
+    <!--UiPath Orchestrator web server address.-->
+    <Server>https://cloud.uipath.com</Server>
+    <!--UiPath Tenant name.-->
+    <Repository>Service or Tenant name</Repository>
+    <!--UiPath Orchestrator authentication.-->
+    <Credentials>
+      <!-- Client Id and User Key for UiPath Cloud Platform user.
+      Username (or email) and password for Enterprise Orchestrator user.
+      You can get value of Tenant Name, Account Logical Name, Client Id and User Key from API Access Information window, as described at:
+      https://docs.uipath.com/orchestrator/reference/consuming-cloud-api#getting-the-api-access-information-from-the-automation-clouds-ui-->
+      <Username>username/client_id</Username>
+      <Password>password/user_key</Password>
+    </Credentials>
+  </DmsConnectionSettings>
+  <!--File path and name settings-->
+  <DmsDocumentDestination>
+    <!--The FolderPath parameter is not used.-->
+    <FolderPath></FolderPath>
+    <FileName>&lt;Project&gt;_&lt;Identifier&gt;</FileName>
+    <!--The NameConflictResolution parameter is not used.-->
+    <CreationPolicy>
+      <NameConflictResolution>NewVersion</NameConflictResolution>
+    </CreationPolicy>
+  </DmsDocumentDestination>
+  <!--Fields Mapping Settings-->
+  <MappedFields>
+    <!--UiPath Orchestrator queue name.-->
+    <DmsMetadataTemplate>
+      <Name>QueueName</Name>
+    </DmsMetadataTemplate>
+    <!--Collection of pairs of correspondent fields.-->
+    <FieldPairs>
+      <FieldPair>
+        <!--ABBYY FlexiCapture field full name.-->
+        <AfcField>Invoice Layout\InvoiceNumber</AfcField>
+        <!--Field key in the UiPath Orchestrator transaction.-->
+        <DmsField>InvoiceNumber</DmsField>
+      </FieldPair>
+      <FieldPair>
+        <AfcField>Invoice Layout\InvoiceDate</AfcField>
+        <DmsField>InvoiceDate</DmsField>
+      </FieldPair>
+      <FieldPair>
+        <AfcField>Invoice Layout\Total</AfcField>
+        <DmsField>Total</DmsField>
+      </FieldPair>
+      <FieldPair>
+        <AfcField>Invoice Layout\LineItems\OrderNumber</AfcField>
+        <DmsField>LineItems\OrderNumber</DmsField>
+      </FieldPair>
+      <FieldPair>
+        <AfcField>Invoice Layout\LineItems\ArticleNumber</AfcField>
+        <DmsField>LineItems\ArticleNumber</DmsField>
+      </FieldPair>
+      <FieldPair>
+        <AfcField>Invoice Layout\LineItems\Description</AfcField>
+        <DmsField>LineItems\Description</DmsField>
+      </FieldPair>
+      <FieldPair>
+        <AfcField>Invoice Layout\LineItems\Quantity</AfcField>
+        <DmsField>LineItems\Quantity</DmsField>
+      </FieldPair>
+      <FieldPair>
+        <AfcField>Invoice Layout\LineItems\UnitPrice</AfcField>
+        <DmsField>LineItems\UnitPrice</DmsField>
+      </FieldPair>
+      <FieldPair>
+        <AfcField>Invoice Layout\LineItems\TotalPriceNetto</AfcField>
+        <DmsField>LineItems\TotalPriceNetto</DmsField>
+      </FieldPair>
+      <FieldPair>
+        <AfcField>Invoice Layout\LineItems\Currency</AfcField>
+        <DmsField>LineItems\Currency</DmsField>
+      </FieldPair>
+    </FieldPairs>
+  </MappedFields>
+  <!--Image Export Settings (see ABBYY FlexiCapture IExportImageSavingOptions for additional info)-->
+  <ExportImageSavingOptions>
+    <AddProperFileExt>true</AddProperFileExt>
+    <ColorType>BlackAndWhite</ColorType>
+    <FieldsToRedact>
+		<PlainList></PlainList>
+		<!-- Example. Regions redaction for InvoiceNumber and InvoiceDate fields from ABBYY FlexiCapture Invoice Definition.
+			<PlainList>Invoice Layout\InvoiceNumber;Invoice Layout\InvoiceDate</PlainList>
+		-->
+    </FieldsToRedact>
+    <Format>pdf</Format>
+    <ImageCompressionType>ICT_CcittGroup4</ImageCompressionType>
+    <PdfAVersion>PAV_1a</PdfAVersion>
+    <PdfTextSearchArea>PTSAT_AllPages</PdfTextSearchArea>
+    <Quality>75</Quality>
+    <RecognitionLanguages />
+    <Resolution>0</Resolution>
+    <SaveAttachmentsToPdf>false</SaveAttachmentsToPdf>
+    <!--The parameter ShouldOverwrite is not used.-->
+    <ShouldOverwrite>false</ShouldOverwrite>
+    <UseMRC>true</UseMRC>
+  </ExportImageSavingOptions>
+  <!--Specific options.-->
+  <DmsSpecificOptions>
+    <!--
+    Authentication type (Optional for Enterprise Orchestrator, required for UiPath Cloud Platform Orchestrator)
+    When using Enterprise Orchestrator either don't specify the value or set it to 'Basic'
+    When using UiPath Cloud Platform Orchestrator set value to 'OAuth2'
+    -->
+    <Option>
+      <Name>AuthenticationType</Name>
+      <Value xsi:type="xsd:string">OAuth2</Value>
+    </Option>
+
+    <!--
+      When using UiPath Cloud Platform Orchestrator provide account logical name
+      You can get value of account logical name from API Access Information window, as described at:
+      https://docs.uipath.com/orchestrator/reference/consuming-cloud-api#getting-the-api-access-information-from-the-automation-clouds-ui
+      
+      When using Enterprise Orchestrator, this option is ignored and shouldn't be specified.
+    -->
+    <!--<Option>
+      <Name>AccountLogicalName</Name>
+      <Value xsi:type="xsd:string">ACCOUNT_LOGICAL_NAME</Value>
+    </Option>-->
+
+    <!--Provide name of UiPath Organization Unit when using UiPath Organization Units / Folders.-->
+    <!--<Option>
+      <Name>OrganizationUnitName</Name>
+      <Value xsi:type="xsd:string">ORG_UNIT_NAME</Value>
+    </Option>-->
+  </DmsSpecificOptions>
+
+  <!--
+    Option to enable/disable saving serialized files to result queue item.
+    To enable saving serialized files to result queue item 'true'.
+    To disable it set value to 'false'.
+    -->
+  <SaveDocumentImages>true</SaveDocumentImages>
+</ConnectorSettings>

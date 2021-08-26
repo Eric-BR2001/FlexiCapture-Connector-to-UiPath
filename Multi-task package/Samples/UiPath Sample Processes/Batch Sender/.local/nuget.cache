@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "dgSpecHash": "qsTOHLjB3+SlrdKy7ORySjpVWw43tZBViNPiFCfNdY2G+6HXC2CbgHQYPxLc3fRlKuPmuslyZZlEIgszsZEqYg==",
+  "success": false,
+  "projectFilePath": "D:\\CodigosGIT\\FlexiCapture-Connector-to-UiPath\\Multi-task package\\Samples\\UiPath Sample Processes\\Batch Sender\\.local\\",
+  "expectedPackageFiles": [
+    "C:\\Users\\ericr\\.nuget\\packages\\avalonedit\\5.0.3\\avalonedit.5.0.3.nupkg.sha512",
+    "C:\\Users\\ericr\\.nuget\\packages\\csvhelper\\2.13.5\\csvhelper.2.13.5.nupkg.sha512",
+    "C:\\Users\\ericr\\.nuget\\packages\\extended.wpf.toolkit\\2.8.0\\extended.wpf.toolkit.2.8.0.nupkg.sha512",
+    "C:\\Users\\ericr\\.nuget\\packages\\humanizer.core\\2.4.2\\humanizer.core.2.4.2.nupkg.sha512",
+    "C:\\Users\\ericr\\.nuget\\packages\\microsoft.aspnet.signalr.client\\2.4.0\\microsoft.aspnet.signalr.client.2.4.0.nupkg.sha512",
+    "C:\\Users\\ericr\\.nuget\\packages\\microsoft.rest.clientruntime\\2.3.10\\microsoft.rest.clientruntime.2.3.10.nupkg.sha512",
+    "C:\\Users\\ericr\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\ericr\\.nuget\\packages\\uipath\\19.4.7054.14370\\uipath.19.4.7054.14370.nupkg.sha512",
+    "C:\\Users\\ericr\\.nuget\\packages\\uipath.system.activities\\19.4.0\\uipath.system.activities.19.4.0.nupkg.sha512",
+    "C:\\Users\\ericr\\.nuget\\packages\\uipath.uiautomation.activities\\19.4.1\\uipath.uiautomation.activities.19.4.1.nupkg.sha512",
+    "C:\\Users\\ericr\\.nuget\\packages\\uipath.vision\\1.5.0\\uipath.vision.1.5.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "filePath": "D:\\CodigosGIT\\FlexiCapture-Connector-to-UiPath\\Multi-task package\\Samples\\UiPath Sample Processes\\Batch Sender\\.local",
+      "message": "Unable to find package Abbyy.UiPath.FlexiCapture.MultiTaskActivities. No packages exist with this id in source(s): C:\\Users\\ericr\\AppData\\Local\\UiPath\\app-21.6.0-beta4514\\Packages, Connect, https://api.nuget.org/v3/index.json, https://gallery.uipath.com/api/v2, https://www.myget.org/F/workflow/, https://www.myget.org/F/workflow/, Local, nuget.org, Official",
+      "libraryId": "Abbyy.UiPath.FlexiCapture.MultiTaskActivities",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.6.1",
+        ".NETFramework,Version=v4.6.1/win7-x86"
+      ]
+    }
+  ]
+}

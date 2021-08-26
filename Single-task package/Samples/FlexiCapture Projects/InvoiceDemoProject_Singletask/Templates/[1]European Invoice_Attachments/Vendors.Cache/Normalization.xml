@@ -1,0 +1,28 @@
+<Substitutions UseSpecialDotsProcessing="true">
+	<Joints>&amp;+-/~</Joints>
+	<JointExceptions>#$%&amp;+-/0123456789@^~</JointExceptions>
+	<CharsToReplaceWithSpace>
+		<![CDATA[	 "'(),:;<>[]`«»‘’‚‛“”„]]>
+	</CharsToReplaceWithSpace>
+	<Substitution Type="Suffix">
+		<Core>str</Core>
+		<Variant>strasse</Variant>
+		<Variant>straße</Variant>
+	</Substitution>
+	<Substitution Type="WholeWord">
+		<Core>Ltd</Core>
+		<Variant>Limited</Variant>
+	</Substitution>
+	<Substitution Type="WholeWord">
+		<Core>Co</Core>
+		<Variant>C°</Variant>
+	</Substitution>
+	<Substitution Type="WholeWord">
+		<Core>SA</Core>
+		<Variant>S/A</Variant>
+	</Substitution>
+	<Substitution Type="WordSplit">
+		<Core>CoKG</Core>
+		<SplitPosition>2</SplitPosition>
+	</Substitution>
+</Substitutions>

@@ -1,0 +1,7 @@
+<Substitutions UseSpecialDotsProcessing="true">
+	<Joints>&amp;+-/~</Joints>
+	<JointExceptions>#$%&amp;+-/0123456789@^~</JointExceptions>
+	<CharsToReplaceWithSpace>
+		<![CDATA[	 "'(),:;<>[]`«»‘’‚‛“”„]]>
+	</CharsToReplaceWithSpace>
+</Substitutions>

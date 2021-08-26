@@ -1,0 +1,646 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="262,295" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:afwcam="clr-namespace:Abbyy.FlexiCapture.WebApi.Client.Actors.Models;assembly=Abbyy.FlexiCapture.WebApi.Client" xmlns:afwcm="clr-namespace:Abbyy.FlexiCapture.WebApi.Client.Models;assembly=Abbyy.FlexiCapture.WebApi.Client" xmlns:aufm="clr-namespace:Abbyy.UiPath.FlexiCapture.MultiTaskActivities;assembly=Abbyy.UiPath.FlexiCapture.MultiTaskActivities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="23">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>Abbyy.FlexiCapture.WebApi.Client.Models</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="20">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>Abbyy.FlexiCapture.WebApi.Client</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="222,175" sap2010:WorkflowViewState.IdRef="Sequence_21">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <StateMachine InitialState="{x:Reference __ReferenceID11}" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="876,718" sap2010:WorkflowViewState.IdRef="StateMachine_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <av:Point x:Key="ShapeLocation">280,2.5</av:Point>
+          <x:Double x:Key="StateContainerWidth">862</x:Double>
+          <x:Double x:Key="StateContainerHeight">681.63200000000006</x:Double>
+          <av:PointCollection x:Key="ConnectorLocation">310,77.5 310,114</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <State x:Name="__ReferenceID11" DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="247,72" sap2010:WorkflowViewState.IdRef="State_10">
+        <State.Entry>
+          <Sequence DisplayName="Acquire connection settings from Orchestrator" sap:VirtualizedContainerService.HintSize="440,759" sap2010:WorkflowViewState.IdRef="Sequence_27">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="TempServerString">
+                <Variable.Default>
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </Variable.Default>
+              </Variable>
+              <Variable x:TypeArguments="x:String" Default="FlexiCapture Server Address" Name="AssetNameServerUrl" />
+              <Variable x:TypeArguments="x:String" Default="FlexiCapture Company" Name="AssetNameCompany" />
+              <Variable x:TypeArguments="x:String" Default="FlexiCapture Credentials" Name="AssetNameCredentials" />
+              <Variable x:TypeArguments="x:String" Default="FlexiCapture Project Name" Name="AssetNameProject" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:GetRobotAsset AssetName="[AssetNameServerUrl]" DisplayName="Get FlexiCapture Server Address from Asset" sap:VirtualizedContainerService.HintSize="418,22" sap2010:WorkflowViewState.IdRef="GetRobotAsset_4" TimeoutMS="300000">
+              <ui:GetRobotAsset.Value>
+                <OutArgument x:TypeArguments="x:String">[TempServerString]</OutArgument>
+              </ui:GetRobotAsset.Value>
+            </ui:GetRobotAsset>
+            <Assign DisplayName="Convert Server Address to Uri" sap:VirtualizedContainerService.HintSize="418,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Uri">[FlexiCaptureServerUrl]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Uri">[New Uri(TempServerString)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="418,287" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+              <TryCatch.Try>
+                <ui:GetRobotAsset AssetName="[AssetNameCompany]" DisplayName="Get FlexiCapture Company from Asset" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetRobotAsset_5" TimeoutMS="300000">
+                  <ui:GetRobotAsset.Value>
+                    <OutArgument x:TypeArguments="x:String">[FlexiCaptureCompany]</OutArgument>
+                  </ui:GetRobotAsset.Value>
+                </ui:GetRobotAsset>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="ui:OrchestratorHttpException" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="ui:OrchestratorHttpException">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="ui:OrchestratorHttpException" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence sap:VirtualizedContainerService.HintSize="583,544" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If Condition="[exception.Message.Contains(&quot;1002&quot;)]" sap:VirtualizedContainerService.HintSize="561,463" sap2010:WorkflowViewState.IdRef="If_4">
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="336,315" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_31" Level="Info" Message="[&quot;Failed to get FlexiCapture Company asset. Using default FlexiCapture tenant.&quot;]" />
+                            <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[FlexiCaptureCompany]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">
+                                  <Literal x:TypeArguments="x:String" Value="" />
+                                </InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Rethrow sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Rethrow_2" />
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+            <ui:GetRobotCredential AssetName="[AssetNameCredentials]" DisplayName="Get FlexiCapture Credentials" sap:VirtualizedContainerService.HintSize="418,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[FlexiCapturePassword]" TimeoutMS="300000" Username="[FlexiCaptureUsername]" />
+            <ui:GetRobotAsset AssetName="[AssetNameProject]" DisplayName="Get FlexiCapture Project Name from Asset" sap:VirtualizedContainerService.HintSize="418,22" sap2010:WorkflowViewState.IdRef="GetRobotAsset_6" TimeoutMS="300000">
+              <ui:GetRobotAsset.Value>
+                <OutArgument x:TypeArguments="x:String">[FlexiCaptureProject]</OutArgument>
+              </ui:GetRobotAsset.Value>
+            </ui:GetRobotAsset>
+            <ui:ShouldStop DisplayName="Check Should Stop" sap:VirtualizedContainerService.HintSize="418,22" sap2010:WorkflowViewState.IdRef="ShouldStop_4" Result="[ShouldStop]" />
+          </Sequence>
+        </State.Entry>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">186.5,114</av:Point>
+            <av:Size x:Key="ShapeSize">247,72</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Double x:Key="StateContainerWidth">233</x:Double>
+            <x:Double x:Key="StateContainerHeight">36.079999999999984</x:Double>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <State.Transitions>
+          <Transition DisplayName="Proceed" sap:VirtualizedContainerService.HintSize="430,512" sap2010:WorkflowViewState.IdRef="Transition_15">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:PointCollection x:Key="ConnectorLocation">310,186 310,243</av:PointCollection>
+                <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Transition.To>
+              <State x:Name="__ReferenceID0" DisplayName="Get Transaction" sap:VirtualizedContainerService.HintSize="186,94" sap2010:WorkflowViewState.IdRef="State_9">
+                <State.Entry>
+                  <Sequence sap:VirtualizedContainerService.HintSize="264,246" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="ui:QueueItem">[TransactionItem]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="ui:QueueItem">[Nothing]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:GetQueueItem ContinueOnError="{x:Null}" DisplayName="Get Transaction Item" sap:VirtualizedContainerService.HintSize="242,22" sap2010:WorkflowViewState.IdRef="GetQueueItem_2" QueueType="[MonitorQueueName]" TimeoutMS="300000" TransactionItem="[TransactionItem]" />
+                  </Sequence>
+                </State.Entry>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">217,243</av:Point>
+                    <av:Size x:Key="ShapeSize">186,94</av:Size>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <x:Double x:Key="StateContainerWidth">172</x:Double>
+                    <x:Double x:Key="StateContainerHeight">58.080000000000041</x:Double>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <State.Transitions>
+                  <Transition DisplayName="Monitor Queue is Empty" sap:VirtualizedContainerService.HintSize="430,505" sap2010:WorkflowViewState.IdRef="Transition_11">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:PointCollection x:Key="ConnectorLocation">403,294.7 508.15,294.7 508.15,377.5</av:PointCollection>
+                        <x:Int32 x:Key="SrcConnectionPointIndex">40</x:Int32>
+                        <x:Int32 x:Key="DestConnectionPointIndex">42</x:Int32>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Transition.To>
+                      <State x:Name="__ReferenceID10" DisplayName="Timeout" sap:VirtualizedContainerService.HintSize="163,105" sap2010:WorkflowViewState.IdRef="State_7">
+                        <State.Entry>
+                          <Sequence sap:VirtualizedContainerService.HintSize="222,208" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Delay DisplayName="Sleep" Duration="[EmptyQueueTimeoutDuration]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                            <ui:ShouldStop DisplayName="Check Should Stop" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="ShouldStop_5" Result="[ShouldStop]" />
+                          </Sequence>
+                        </State.Entry>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <av:Point x:Key="ShapeLocation">418.5,377.5</av:Point>
+                            <av:Size x:Key="ShapeSize">163,105</av:Size>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Double x:Key="StateContainerWidth">149</x:Double>
+                            <x:Double x:Key="StateContainerHeight">69.080000000000041</x:Double>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <State.Transitions>
+                          <Transition DisplayName="Continue Processing Queue Items" sap:VirtualizedContainerService.HintSize="430,505" sap2010:WorkflowViewState.IdRef="Transition_9">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <av:PointCollection x:Key="ConnectorLocation">581.5,430 593.5,430 593.5,222.816 384.4,222.816 384.4,243</av:PointCollection>
+                                <x:Int32 x:Key="SrcConnectionPointIndex">36</x:Int32>
+                                <x:Int32 x:Key="DestConnectionPointIndex">70</x:Int32>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Transition.To>
+                              <x:Reference>__ReferenceID0</x:Reference>
+                            </Transition.To>
+                            <Transition.Condition>[ShouldStop = false]</Transition.Condition>
+                          </Transition>
+                          <Transition DisplayName="Stop Requested" sap:VirtualizedContainerService.HintSize="430,505" sap2010:WorkflowViewState.IdRef="Transition_10">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <av:PointCollection x:Key="ConnectorLocation">483.7,482.5 483.7,512.5 356.1,512.5 356.1,550.5</av:PointCollection>
+                                <x:Int32 x:Key="SrcConnectionPointIndex">31</x:Int32>
+                                <x:Int32 x:Key="DestConnectionPointIndex">62</x:Int32>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Transition.To>
+                              <State x:Name="__ReferenceID8" DisplayName="Process End" sap:VirtualizedContainerService.HintSize="187,119" sap2010:WorkflowViewState.IdRef="State_6" IsFinal="True">
+                                <State.Entry>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;Monitor process ended.&quot;]" />
+                                </State.Entry>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <av:Point x:Key="ShapeLocation">206.5,550.5</av:Point>
+                                    <av:Size x:Key="ShapeSize">187,119</av:Size>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    <x:Double x:Key="StateContainerWidth">173</x:Double>
+                                    <x:Double x:Key="StateContainerHeight">82.632000000000062</x:Double>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </State>
+                            </Transition.To>
+                            <Transition.Action>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Trace" Message="[&quot;Stop requested after timeout. Stopping.&quot;]" />
+                            </Transition.Action>
+                            <Transition.Condition>[ShouldStop = True]</Transition.Condition>
+                          </Transition>
+                        </State.Transitions>
+                        <State.Variables>
+                          <Variable x:TypeArguments="x:Boolean" Default="False" Name="ShouldStop" />
+                        </State.Variables>
+                      </State>
+                    </Transition.To>
+                    <Transition.Action>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;Monitor Queue is empty. Going to timeout state.&quot;]" />
+                    </Transition.Action>
+                    <Transition.Condition>[TransactionItem is Nothing]</Transition.Condition>
+                  </Transition>
+                  <Transition DisplayName="Successfully got Transaction" sap:VirtualizedContainerService.HintSize="430,505" sap2010:WorkflowViewState.IdRef="Transition_14">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:PointCollection x:Key="ConnectorLocation">310,337 310,379</av:PointCollection>
+                        <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                        <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Transition.Condition>[TransactionItem isnot Nothing]</Transition.Condition>
+                    <Transition.To>
+                      <State x:Name="__ReferenceID9" DisplayName="Process Queue Item" sap:VirtualizedContainerService.HintSize="189,102" sap2010:WorkflowViewState.IdRef="State_8">
+                        <State.Entry>
+                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="418,287" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                            <TryCatch.Try>
+                              <Flowchart DisplayName="Process Queue Item" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+                                <Flowchart.Variables>
+                                  <Variable x:TypeArguments="x:String" Name="BatchDetails" />
+                                  <Variable x:TypeArguments="x:String" Name="BatchStageName" />
+                                  <Variable x:TypeArguments="afwcm:ProcessingStageType" Name="BatchStageType" />
+                                </Flowchart.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <av:Point x:Key="ShapeLocation">400,2.5</av:Point>
+                                    <av:Size x:Key="ShapeSize">60,75</av:Size>
+                                    <x:Double x:Key="Width">840</x:Double>
+                                    <av:PointCollection x:Key="ConnectorLocation">430,77.5 430,120</av:PointCollection>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Flowchart.StartNode>
+                                  <x:Reference>__ReferenceID7</x:Reference>
+                                </Flowchart.StartNode>
+                                <FlowStep x:Name="__ReferenceID7">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">309,120</av:Point>
+                                      <av:Size x:Key="ShapeSize">242,60</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">430,180 430,204</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign DisplayName="Get Batch ID from Queue Item" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Int32">[BatchId]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Int32">[Cint(TransactionItem.SpecificContent("BatchId"))]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <FlowStep.Next>
+                                    <FlowStep x:Name="__ReferenceID1">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">330,204</av:Point>
+                                          <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                          <av:PointCollection x:Key="ConnectorLocation">430,256 430,296.5</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <aufm:ProjectScopeActivity ActivityLayoutVersion="1.0" DisplayName="FlexiCapture Project Scope" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ProjectScopeActivity_2" Password="[FlexiCapturePassword]" ProjectName="[FlexiCaptureProject]" ServerUrl="[FlexiCaptureServerUrl]" Tenant="[FlexiCaptureCompany]" Username="[FlexiCaptureUsername]">
+                                        <aufm:ProjectScopeActivity.Child>
+                                          <ActivityAction x:TypeArguments="afwcam:ConnectionConfiguration">
+                                            <ActivityAction.Argument>
+                                              <DelegateInArgument x:TypeArguments="afwcam:ConnectionConfiguration" Name="FlexiCaptureConnectionConfiguration" />
+                                            </ActivityAction.Argument>
+                                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="222,146" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <aufm:MonitorActivity ActivityLayoutVersion="1.0" BatchId="[BatchId]" Details="[BatchDetails]" DisplayName="Get Batch Stage" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MonitorActivity_2" StageName="[BatchStageName]" StageType="[BatchStageType]" />
+                                            </Sequence>
+                                          </ActivityAction>
+                                        </aufm:ProjectScopeActivity.Child>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </aufm:ProjectScopeActivity>
+                                      <FlowStep.Next>
+                                        <FlowSwitch x:TypeArguments="afwcm:ProcessingStageType" x:Name="__ReferenceID2" DisplayName="Switch (Batch Stage Type)" Expression="[BatchStageType]" sap:VirtualizedContainerService.HintSize="142,87" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_2">
+                                          <FlowSwitch.Default>
+                                            <FlowStep x:Name="__ReferenceID3">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <av:Point x:Key="ShapeLocation">10,464</av:Point>
+                                                  <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Sequence DisplayName="Postpone" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Info" Message="[&quot;Transaction '&quot; + TransactionItem.Id.ToString() +&quot;': Batch ID = '&quot; + BatchId.ToString() + &quot;' is on stage '&quot; + BatchStageName + &quot;'. Deferring transaction.&quot;]" />
+                                                <ui:PostponeTransactionItem ContinueOnError="{x:Null}" DeferDate="[DateTime.Now + OtherStagePostpone]" DisplayName="Postpone Transaction Item" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="PostponeTransactionItem_3" TimeoutMS="300000" TransactionItem="[TransactionItem]" />
+                                              </Sequence>
+                                            </FlowStep>
+                                          </FlowSwitch.Default>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">359.5,296.5</av:Point>
+                                              <av:Size x:Key="ShapeSize">142,87</av:Size>
+                                              <av:PointCollection x:Key="Default">359.5,340 110,340 110,464</av:PointCollection>
+                                              <av:PointCollection x:Key="VerificationConnector">359.5,361.75 320,361.75 320,464</av:PointCollection>
+                                              <av:PointCollection x:Key="ProcessedConnector">500.5,361.75 530,361.75 530,464</av:PointCollection>
+                                              <av:PointCollection x:Key="ExceptionsConnector">500.5,340 740,340 740,464</av:PointCollection>
+                                              <x:String x:Key="DefaultCaseDisplayName">Other Stage Type</x:String>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <FlowStep x:Key="Processed" x:Name="__ReferenceID5">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <av:Point x:Key="ShapeLocation">430,464</av:Point>
+                                                <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Sequence DisplayName="Add to Fetcher &amp; Complete" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                              <Sequence.Variables>
+                                                <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="TempFetcherQueueItems" />
+                                              </Sequence.Variables>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Info" Message="[&quot;Transaction '&quot; + TransactionItem.Id.ToString() +&quot;': Batch ID = '&quot; + BatchId.ToString() + &quot;' is on stage '&quot; + BatchStageName + &quot;'. Adding Batch ID to queue '&quot; + FetcherQueueName + &quot;' and completing transaction.&quot;]" />
+                                              <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Item to Fetcher Queue" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_3" Priority="Normal" QueueType="[FetcherQueueName]" Reference="[BatchId.ToString()]" TimeoutMS="300000">
+                                                <ui:AddQueueItem.ItemInformation>
+                                                  <InArgument x:TypeArguments="x:Int32" x:Key="BatchId">[BatchId]</InArgument>
+                                                </ui:AddQueueItem.ItemInformation>
+                                              </ui:AddQueueItem>
+                                              <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Skip="{x:Null}" To="{x:Null}" Top="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="Equals" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="GetQueueItems_3" QueueItemStates="All" QueueName="[FetcherQueueName]" Reference="[BatchId.ToString()]" Result="[TempFetcherQueueItems]" TimeoutMS="300000" />
+                                              <ui:SetTransactionStatus ContinueOnError="{x:Null}" Reason="{x:Null}" ServiceBaseAddress="{x:Null}" DisplayName="Complete Monitor Transaction" ErrorType="Business" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_4" Status="Successful" TimeoutMS="300000" TransactionItem="[TransactionItem]">
+                                                <ui:SetTransactionStatus.Output>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="Message">["Monitor Transaction was successfully processed. Queue item was added to '" + FetcherQueueName + "'."]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="FetcherQueueItemKey">[TempFetcherQueueItems.First().ItemKey.ToString()]</InArgument>
+                                                </ui:SetTransactionStatus.Output>
+                                              </ui:SetTransactionStatus>
+                                            </Sequence>
+                                          </FlowStep>
+                                          <FlowStep x:Key="Exceptions" x:Name="__ReferenceID6">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <av:Point x:Key="ShapeLocation">640,464</av:Point>
+                                                <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Sequence DisplayName="Fail Transaction" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Info" Message="[&quot;Transaction '&quot; + TransactionItem.Id.ToString() +&quot;': Batch ID = '&quot; + BatchId.ToString() + &quot;' is on stage '&quot; + BatchStageName + &quot;'. Failing transaction.&quot;]" />
+                                              <ui:SetTransactionStatus ContinueOnError="{x:Null}" ServiceBaseAddress="{x:Null}" Details="[BatchDetails]" DisplayName="Fail Transaction" ErrorType="Business" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_5" Reason="[&quot;Batch '&quot; + BatchId.ToString() + &quot;' is on stage with type 'Exception'. &quot; + Environment.NewLine + BatchDetails]" Status="Failed" TimeoutMS="300000" TransactionItem="[TransactionItem]">
+                                                <ui:SetTransactionStatus.Output>
+                                                  <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                                                </ui:SetTransactionStatus.Output>
+                                              </ui:SetTransactionStatus>
+                                            </Sequence>
+                                          </FlowStep>
+                                          <FlowStep x:Key="Verification" x:Name="__ReferenceID4">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <av:Point x:Key="ShapeLocation">220,464</av:Point>
+                                                <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Sequence DisplayName="Add to Verifier &amp; Postpone" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                              <Sequence.Variables>
+                                                <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="TempVerifierQueueItems" />
+                                              </Sequence.Variables>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="675,91" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Info" Message="[&quot;Transaction '&quot; + TransactionItem.Id.ToString() +&quot;': Batch ID = '&quot; + BatchId.ToString() + &quot;' is on stage '&quot; + BatchStageName + &quot;'. &quot;]" />
+                                              <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Skip="{x:Null}" To="{x:Null}" Top="{x:Null}" DisplayName="Get Verifier Queue Items" FilterStrategy="Equals" sap:VirtualizedContainerService.HintSize="675,22" sap2010:WorkflowViewState.IdRef="GetQueueItems_4" QueueItemStates="All" QueueName="[VerifierQueueName]" Reference="[BatchId.ToString()]" Result="[TempVerifierQueueItems]" TimeoutMS="300000" />
+                                              <If Condition="[TempVerifierQueueItems.Any()]" sap:VirtualizedContainerService.HintSize="675,425" sap2010:WorkflowViewState.IdRef="If_2">
+                                                <If.Then>
+                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="Info" Message="[&quot;Batch ID was already added to '&quot; + VerifierQueueName + &quot;'.&quot;]" />
+                                                </If.Then>
+                                                <If.Else>
+                                                  <Sequence sap:VirtualizedContainerService.HintSize="336,277" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Info" Message="[&quot;Adding Batch ID to '&quot; + VerifierQueueName + &quot;'.&quot;]" />
+                                                    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Item to Verifier Queue" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_4" Priority="Normal" QueueType="[VerifierQueueName]" Reference="[BatchId.ToString()]" TimeoutMS="300000">
+                                                      <ui:AddQueueItem.ItemInformation>
+                                                        <InArgument x:TypeArguments="x:Int32" x:Key="BatchId">[BatchId]</InArgument>
+                                                      </ui:AddQueueItem.ItemInformation>
+                                                    </ui:AddQueueItem>
+                                                  </Sequence>
+                                                </If.Else>
+                                              </If>
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="675,91" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Info" Message="[&quot;Postponing Monitor queue item.&quot;]" />
+                                              <ui:PostponeTransactionItem ContinueOnError="{x:Null}" DeferDate="[DateTime.Now + VerificationStagePostpone]" DisplayName="Postpone Transaction Item" sap:VirtualizedContainerService.HintSize="675,22" sap2010:WorkflowViewState.IdRef="PostponeTransactionItem_4" TimeoutMS="300000" TransactionItem="[TransactionItem]" />
+                                            </Sequence>
+                                          </FlowStep>
+                                        </FlowSwitch>
+                                      </FlowStep.Next>
+                                    </FlowStep>
+                                  </FlowStep.Next>
+                                </FlowStep>
+                                <x:Reference>__ReferenceID1</x:Reference>
+                                <x:Reference>__ReferenceID2</x:Reference>
+                                <x:Reference>__ReferenceID3</x:Reference>
+                                <x:Reference>__ReferenceID4</x:Reference>
+                                <x:Reference>__ReferenceID5</x:Reference>
+                                <x:Reference>__ReferenceID6</x:Reference>
+                              </Flowchart>
+                            </TryCatch.Try>
+                            <TryCatch.Catches>
+                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ActivityAction x:TypeArguments="s:Exception">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                  </ActivityAction.Argument>
+                                  <Sequence DisplayName="Fail Transaction" sap:VirtualizedContainerService.HintSize="336,277" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_27" Level="Error" Message="[&quot;Failed to process transaction'&quot; + TransactionItem.ItemKey.ToString() + &quot;'. Occurred error: &quot; + Environment.NewLine + exception.ToString()]" />
+                                    <ui:SetTransactionStatus ContinueOnError="{x:Null}" ServiceBaseAddress="{x:Null}" Details="[&quot;Failed to process transaction'&quot; + TransactionItem.ItemKey.ToString() + &quot;'. Occurred error: &quot; + Environment.NewLine + exception.ToString()]" DisplayName="Fail Transaction" ErrorType="Application" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_6" Reason="[exception.ToString()]" Status="Failed" TimeoutMS="300000" TransactionItem="[TransactionItem]">
+                                      <ui:SetTransactionStatus.Output>
+                                        <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+                                      </ui:SetTransactionStatus.Output>
+                                    </ui:SetTransactionStatus>
+                                  </Sequence>
+                                </ActivityAction>
+                              </Catch>
+                            </TryCatch.Catches>
+                            <TryCatch.Finally>
+                              <ui:ShouldStop DisplayName="Check Should Stop" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="ShouldStop_6" Result="[ShouldStop]" />
+                            </TryCatch.Finally>
+                          </TryCatch>
+                        </State.Entry>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <av:Point x:Key="ShapeLocation">215.5,379</av:Point>
+                            <av:Size x:Key="ShapeSize">189,102</av:Size>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Double x:Key="StateContainerWidth">175</x:Double>
+                            <x:Double x:Key="StateContainerHeight">66.080000000000041</x:Double>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <State.Transitions>
+                          <Transition DisplayName="Continue Processing Queue Items" sap:VirtualizedContainerService.HintSize="430,505" sap2010:WorkflowViewState.IdRef="Transition_12">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <av:PointCollection x:Key="ConnectorLocation">366.7,481 366.7,536.816 601.5,536.816 601.5,213 356.5,213 356.5,243</av:PointCollection>
+                                <x:Int32 x:Key="SrcConnectionPointIndex">63</x:Int32>
+                                <x:Int32 x:Key="DestConnectionPointIndex">58</x:Int32>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Transition.To>
+                              <x:Reference>__ReferenceID0</x:Reference>
+                            </Transition.To>
+                            <Transition.Condition>[ShouldStop = false]</Transition.Condition>
+                          </Transition>
+                          <Transition DisplayName="Stop Requested" sap:VirtualizedContainerService.HintSize="430,505" sap2010:WorkflowViewState.IdRef="Transition_13">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <av:PointCollection x:Key="ConnectorLocation">310,481 310,511 309.35,511 309.35,550.5</av:PointCollection>
+                                <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+                                <x:Int32 x:Key="DestConnectionPointIndex">42</x:Int32>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Transition.To>
+                              <x:Reference>__ReferenceID8</x:Reference>
+                            </Transition.To>
+                            <Transition.Action>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_28" Level="Info" Message="[&quot;Stop requsted after processing queue item. Stopping.&quot;]" />
+                            </Transition.Action>
+                            <Transition.Condition>[ShouldStop = true]</Transition.Condition>
+                          </Transition>
+                        </State.Transitions>
+                        <State.Variables>
+                          <Variable x:TypeArguments="x:Int32" Name="BatchId" />
+                          <Variable x:TypeArguments="x:Boolean" Default="False" Name="ShouldStop" />
+                        </State.Variables>
+                      </State>
+                    </Transition.To>
+                  </Transition>
+                </State.Transitions>
+              </State>
+            </Transition.To>
+            <Transition.Action>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,93" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Trace" Message="[&quot;Stop was not requested after initialization. Proceeding.&quot;]" />
+            </Transition.Action>
+            <Transition.Condition>[ShouldStop = false]</Transition.Condition>
+          </Transition>
+          <Transition DisplayName="Stop Requested" sap:VirtualizedContainerService.HintSize="430,512" sap2010:WorkflowViewState.IdRef="Transition_16">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:PointCollection x:Key="ConnectorLocation">198.85,186 198.85,520.5 253.25,520.5 253.25,550.5</av:PointCollection>
+                <x:Int32 x:Key="SrcConnectionPointIndex">3</x:Int32>
+                <x:Int32 x:Key="DestConnectionPointIndex">18</x:Int32>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Transition.To>
+              <x:Reference>__ReferenceID8</x:Reference>
+            </Transition.To>
+            <Transition.Action>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,93" sap2010:WorkflowViewState.IdRef="LogMessage_29" Level="Trace" Message="[&quot;Stop requested after initialization. Stopping.&quot;]" />
+            </Transition.Action>
+            <Transition.Condition>[ShouldStop = true]</Transition.Condition>
+          </Transition>
+        </State.Transitions>
+        <State.Variables>
+          <Variable x:TypeArguments="x:Boolean" Default="False" Name="ShouldStop" />
+        </State.Variables>
+      </State>
+      <x:Reference>__ReferenceID0</x:Reference>
+      <x:Reference>__ReferenceID9</x:Reference>
+      <x:Reference>__ReferenceID10</x:Reference>
+      <x:Reference>__ReferenceID8</x:Reference>
+      <StateMachine.Variables>
+        <Variable x:TypeArguments="x:Uri" Name="FlexiCaptureServerUrl" />
+        <Variable x:TypeArguments="x:String" Name="FlexiCaptureCompany" />
+        <Variable x:TypeArguments="x:String" Name="FlexiCaptureUsername" />
+        <Variable x:TypeArguments="ss:SecureString" Name="FlexiCapturePassword" />
+        <Variable x:TypeArguments="x:String" Name="FlexiCaptureProject" />
+        <Variable x:TypeArguments="ui:QueueItem" Name="TransactionItem" />
+        <Variable x:TypeArguments="x:TimeSpan" Default="[TimeSpan.FromMinutes(1)]" Name="OtherStagePostpone" />
+        <Variable x:TypeArguments="x:TimeSpan" Default="[TimeSpan.FromSeconds(15)]" Name="EmptyQueueTimeoutDuration" />
+        <Variable x:TypeArguments="x:String" Default="Monitor Queue" Name="MonitorQueueName" />
+        <Variable x:TypeArguments="x:String" Default="Verifier Queue" Name="VerifierQueueName" />
+        <Variable x:TypeArguments="x:String" Default="Fetcher Queue" Name="FetcherQueueName" />
+        <Variable x:TypeArguments="x:TimeSpan" Default="[TimeSpan.FromMinutes(2)]" Name="VerificationStagePostpone" />
+      </StateMachine.Variables>
+    </StateMachine>
+  </Sequence>
+</Activity>
